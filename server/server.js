@@ -8,7 +8,10 @@ const path = require("path");
 
 
 const app = express();
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+  origin: "*"
+}));
 app.use(bodyParser.json());
 app.use('/uploads', express.static('uploads'));   //http://localhost:5000/uploads/filename.pdf
 
