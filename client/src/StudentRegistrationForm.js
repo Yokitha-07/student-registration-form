@@ -52,7 +52,7 @@ function StudentRegistrationForm() {
         submitData.append("document", file);
     }
     try {
-        await axios.post("http://localhost:5000/register", submitData, {
+        await axios.post("https://student-registration-form-bf6h.onrender.com/register", submitData, {
             headers: { "Content-Type": "multipart/form-data" },
         });
         alert("Student Registered Successfully!");
