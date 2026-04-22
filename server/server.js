@@ -13,7 +13,8 @@ app.use(bodyParser.json());
 app.use('/uploads', express.static('uploads'));   //http://localhost:5000/uploads/filename.pdf
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/studentDB")
+// mongoose.connect("mongodb://127.0.0.1:27017/studentDB")
+    mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("MongoDB Connected"))
     .catch((err) => console.log(err));
 
