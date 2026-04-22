@@ -6,6 +6,7 @@ function StudentRegistrationForm() {
         name: "",
         email: "",
         phone: "",
+        address: "",
         ageGroup: "",
         gender: "",
         courses: [],
@@ -67,6 +68,7 @@ function StudentRegistrationForm() {
             <input type="text" name="name" placeholder="Full Name" onChange={handleChange} required />
             <input type="email" name="email" placeholder="Email Address" onChange={handleChange} required />
             <input type="text" name="phone" placeholder="Phone Number" onChange={handleChange} required />
+            <input type="text" name="address" placeholder="address" onChange={handleChange} required />
 
             <select name="ageGroup" onChange={handleChange} required>
                 <option value="">Select Age Group</option>
@@ -76,15 +78,28 @@ function StudentRegistrationForm() {
                 <option value="36+">36+</option>
             </select>
 
+          <div >
             <label>Gender:</label>
-            <label><input type="radio" name="gender" value="Male" onChange={handleChange} /> Male</label>
-            <label><input type="radio" name="gender" value="Female" onChange={handleChange} /> Female</label>
-            <label><input type="radio" name="gender" value="Other" onChange={handleChange} /> Other</label>
 
+             <label>
+                <input type="radio" name="gender" value="Male" onChange={handleChange} />  Male 
+             </label>
+
+            <label>
+                 <input type="radio" name="gender" value="Female" onChange={handleChange} /> Female
+            </label>
+
+            <label> 
+                <input type="radio" name="gender" value="Other" onChange={handleChange} /> Other
+            </label>
+          </div>
+
+             <div>
             <label>Courses Interested:</label>
-            <label><input type="checkbox" name="courses" value="Web Development" onChange={handleChange} /> Web Development</label>
+            <label><input type="checkbox" name="courses" value="Web Development" onChange={handleChange} />  Web Development</label>
             <label><input type="checkbox" name="courses" value="AI & ML" onChange={handleChange} /> AI & ML</label>
             <label><input type="checkbox" name="courses" value="DevOps" onChange={handleChange} /> DevOps</label>
+            </div>
 
             <select name="qualification" onChange={handleChange} required>
                 <option value="">Select Qualification</option>

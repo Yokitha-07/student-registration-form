@@ -10,7 +10,7 @@ const path = require("path");
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-app.use('/uploads', express.static('uploads'));
+app.use('/uploads', express.static('uploads'));   //http://localhost:5000/uploads/filename.pdf
 
 
 mongoose.connect("mongodb://127.0.0.1:27017/studentDB")
@@ -30,6 +30,7 @@ const studentSchema = new mongoose.Schema({
     name: String,
     email: String,
     phone: String,
+    address: String,
     ageGroup: String,
     gender: String,
     courses: [String],
@@ -44,14 +45,14 @@ const Student = mongoose.model("Student", studentSchema);
 app.post("/register", upload.single("document"), async (req, res) => {
     try {
         const {
-            name, email, phone, ageGroup, gender,
+            name, email, phone,address, ageGroup, gender,
             qualification, learningMode, comments
         } = req.body;
         const courses = req.body["courses[]"] || req.body.courses;
         const documentPath = req.file ? req.file.path : "";
 
         const student = new Student({
-            name, email, phone, ageGroup, gender,
+            name, email, phone, address, ageGroup, gender,
             courses: Array.isArray(courses) ? courses : [courses],
             qualification, learningMode, comments,
             document: documentPath
