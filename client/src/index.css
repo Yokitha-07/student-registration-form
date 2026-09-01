@@ -1,8 +1,10 @@
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #f4f7fb;
@@ -17,8 +19,10 @@ code {
   max-width: 600px;
   margin: 50px auto;
   padding: 30px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
-  border-radius: 12px;
-  color: white;
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  color: #1f2937;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
